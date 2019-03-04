@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        * {
+            margin: 0 auto;
+
+        }
+
+        body {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -5;
+            background: url("images/background_veges.jpg") no-repeat center center fixed;
+            background-size: 100%;
+        }
+
+        .nav_top {
+            position: fixed;
+            margin-top: 4%;
+            position: relative;
+            background-color: #fff;
+            overflow: hidden;
+            width: 80%;
+            height: 11%;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+            border-radius: 50px 50px 0 0;
+            opacity: 0.8;
+            border-bottom: 1px solid red;
+        }
+
+        .nav_top a {
+            float: left;
+            color: #f22c2c;
+            padding: 10px 15px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav_top_center {
+            float: none;
+            position: absolute;
+            left: 50%;
+            font-size: 2em;
+            line-height: 45px;
+        }
+
+        .nav_top_right {
+            position: absolute;
+            float: right;
+            bottom: 0;
+            right: 0;
+        }
+        .nav_top_right a:hover {
+            color: black;
+        }
+        .sign {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .nav_bottom {
+            position: relative;
+            background-color: #fff;
+            overflow: hidden;
+            height: 40px;
+            width: 80%;
+            
+            border-radius: 0 0 50px 50px;
+            opacity: 0.8;
+            border-top: 1px solid red;
+            margin-top: 3px;
+        }
+
+        .nav_bottom a {
+            float: left;
+            display: block;
+            width: 20%;
+            height: 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 40px;
+            text-decoration: none;
+            text-align: center;
+            color: #f22c2c;
+        }
+
+        .nav_bottom a:hover {
+            background-color: #f22c2c;
+            color: #fff;
+        }
+
+        .nav_bottom .left_side_tag {
+            border-radius: 0 0 0 50px;
+        }
+
+        .nav_bottom .right_side_tag {
+            border-radius: 0 0 50px 0;
+        }
+
+        main {
+            width: 200px;
+            height: 800px;
+
+        }
+
+        .section {
+            position: absolute;
+            left: 10%;
+            top: 22%;
+        }
+
+        .search_bar {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0 0 -350px;
+            height: 50px;
+            width: 700px;
+            border: 1px solid white;
+            background-color: #fff;
+            border-radius: 30px;
+        }
+
+        .search_bar input {
+            float: left;
+            box-sizing: border-box;
+            border: 0px;
+            width: 580px;
+            font-size: 1.3em;
+            padding: 12px 30px;
+            outline: none;
+            border-radius: 30px 0 0 30px;
+            color: red;
+        }
+
+        .search_bar button {
+            float: right;
+            box-sizing: border-box;
+            border: 0px;
+            width: 120px;
+            height: 100%;
+            background-color: #f75935;
+            cursor: pointer;
+            color: white;
+            font-size: 1.3em;
+            border-radius: 0 30px 30px 0;
+        }
+
+        .infotrack {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+        }
+
+        .activeclick button{
+            float: center;
+            box-sizing: border-box;
+            border: 0px;
+            width: 120px;
+            height: 100%;
+            background-color: #f75935;
+            cursor: pointer;
+            color: white;
+            font-size: 1.3em;
+            border-radius: 0 0px 0px 0;
+        }
+
+        .footer {
+            position:absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 200px;
+            border: 1px solid white;
+        }
+
+        .active, .btn:hover {
+            background-color: #666;
+            color: white;
+        }
+
+        .active, .btn:focus {
+            background-color: #666;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav_top">
+        <div class="nav_top_center">
+            <a href="file:///C:/Users/Geoff/Desktop/comp1930_team_3/info.html">KEEP IT<br>FRESH</a>
+        </div>
+        <div class="nav_top_right">
+            <a href="#sign_in" class="sign">SIGN IN</a>
+            <a href="#sign_up" class="sign">SIGN UP</a>
+            <a href="#facebook" class="social_media"><img src="images/facebook.png" alt="facebook_image"></a>
+            <a href="#instagram" class="social_media"><img src="images/instagram.png" alt="instagram_image"></a>
+            <a href="#twitter" class="social_media"><img src="images/twitter.png" alt="twitter_image"></a>
+        </div>
+    </nav>
+    <nav class="nav_bottom">
+        <a href="information.html" class="left_side_tag">INFO</a>
+        <a href="tracking.html">TRACK</a>
+        <a href="calendar.html">CALENDAR</a>
+        <a href="forum.html">FORUM</a>
+        <a href="About.html" class="right_side_tag">ABOUT US</a>
+    </nav>
+    
+    <section class="infotrack">
+        <div class="activeclick">
+            <button class="btn">INFO</button>
+            <button class="btn">TRACK</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="search_bar">
+            <input id="textBox" type="text" placeholder="#Banana #Tomato #Milk">
+			<form action="./information.html">
+				<button type="submit" onclick="myFunction()">INFO</button>
+			</form>
+			<form action="./tracking.html">
+				<button type="submit" onclick="myFunction()">TRACK</button>
+			</form>
+        </div>
+    </section>
+	<script>
+		function myFunction()
+    {
+			console.log(document.getElementById("textBox").value);
+            localStorage.setItem("testName",document.getElementById("textBox").value);
+
+        }
+	</script>
+
+    <footer>
+        <div class="footer">
+
+        </div>
+    </footer>
+	<!--
+    <script>
+        var header = document.getElementById("myDIV"); // where is myDIV assigned?
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            });
+        }
+    </script>
+	-->
+    
+    <!-- <script>
+
+        window.onscroll = function() {stickyNav()};
+        var navbar = document.getElementById('nav_bottom');
+        var sticky = navbar.offsetTop;
+
+        function stickyNav() {
+            if (window.pageYOffset >= sticky){
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script> -->
+</body>
+</html>
