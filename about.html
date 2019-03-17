@@ -5,6 +5,15 @@
     <meta charset="utf-8" />
     <title></title>
 	<style>
+		html {
+            overflow-y: scroll;
+        }
+
+        * {
+            margin: 0 auto;
+
+        }
+
 		body {
             position: relative;
             width: 100%;
@@ -16,36 +25,105 @@
             background-size: 100%;
 			border: 1px solid black;
 			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-			
-
         }
-		#title{
+
+        .nav_top {
+            position: fixed;
+            margin-top: 4%;
+            position: relative;
+            background-color: #fff;
+            overflow: hidden;
+            width: 80%;
+            height: 11%;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+            border-radius: 50px 50px 0 0;
+            opacity: 0.8;
+            border-bottom: 1px solid red;
+        }
+
+        .nav_top a {
+            float: left;
+            color: #f22c2c;
+            padding: 10px 15px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav_top_center {
+            float: none;
+            position: relative;
+            left: 50%;
+            font-size: 2em;
+            line-height: 45px;
+        }
+
+        .nav_top_right {
+            position: absolute;
+            float: right;
+            bottom: 0;
+            right: 0;
+        }
+
+        .nav_top_right a:hover {
+            color: black;
+        }
+
+        .sign {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .nav_bottom {
+            position: relative;
+            background-color: #fff;
+            overflow: hidden;
+            height: 40px;
+            width: 80%;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            border-radius: 0 0 50px 50px;
+            opacity: 0.8;
+            border-top: 1px solid red;
+            margin-top: 3px;
+        }
+
+        .nav_bottom a {
+            float: left;
+            display: block;
+            width: 20%;
+            height: 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 40px;
+            text-decoration: none;
+            text-align: center;
+            color: #f22c2c;
+        }
+
+        .nav_bottom a:hover {
+            background-color: #f22c2c;
+            color: #fff;
+        }
+
+        .nav_bottom .left_side_tag {
+            border-radius: 0 0 0 50px;
+        }
+
+        .nav_bottom .right_side_tag {
+            border-radius: 0 0 50px 0;
+        }
+
+		#title {
 			margin: 5%;
 			font-size: 50px;
 			color: #000000;
 			background-color: #ffffff;
 			opacity: 0.8;
 			color: #f22c2c;
-			}
-		div.why{
-			margin: 5%;
-			font-size: 18px;
-			color: #000000;
-			border: 1px dotted white;
-			background-color: #ffffff;
-			opacity: 0.8;
-			color: #f22c2c;
 		}
-		div.goals{
-			margin: 5%;
-			font-size: 18px;
-			color: #000000;
-			border: 1px dotted white;
-			background-color: #ffffff;
-			opacity: 0.8;
-			color: #f22c2c;
-		}
-		div.app{
+
+		div.why {
 			margin: 5%;
 			font-size: 18px;
 			color: #000000;
@@ -55,9 +133,48 @@
 			color: #f22c2c;
 		}
 
+		div.goals {
+			margin: 5%;
+			font-size: 18px;
+			color: #000000;
+			border: 1px dotted white;
+			background-color: #ffffff;
+			opacity: 0.8;
+			color: #f22c2c;
+		}
+
+		div.app {
+			margin: 5%;
+			font-size: 18px;
+			color: #000000;
+			border: 1px dotted white;
+			background-color: #ffffff;
+			opacity: 0.8;
+			color: #f22c2c;
+		}
 	</style>
 </head>
 <body>
+	<nav class="nav_top">
+		<div class="nav_top_center">
+			<a href="home.html">KEEP IT<br>FRESH</a>
+		</div>
+		<div class="nav_top_right">
+			<a href="#sign_in" class="sign">SIGN IN</a>
+			<a href="#sign_up" class="sign">SIGN UP</a>
+			<a href="#facebook" class="social_media"><img src="images/facebook.png" alt="facebook_image"></a>
+			<a href="#instagram" class="social_media"><img src="images/instagram.png" alt="instagram_image"></a>
+			<a href="#twitter" class="social_media"><img src="images/twitter.png" alt="twitter_image"></a>
+		</div>
+	</nav>
+	<nav class="nav_bottom">
+		<a href="information.html" class="left_side_tag">INFO</a>
+		<a href="tracking.html">TRACK</a>
+		<a href="calendar.html">CALENDAR</a>
+		<a href="forum.html">FORUM</a>
+		<a href="About.html" class="right_side_tag">ABOUT US</a>
+	</nav>
+
 	<h1 id="title">About Us</h1>
 
 	<div class="why">
