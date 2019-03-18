@@ -6,16 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <style>
-        html {
-            overflow-y: scroll;
-        }
-        
         * {
             margin: 0 auto;
         }
 
         body {
-            position: fixed;
+            position: relative;
             width: 100%;
             height: 100%;
             left: 0;
@@ -26,13 +22,14 @@
         }
 
         .nav_top {
-            position: fixed;
-            margin-top: 4%;
-            position: relative;
+            position: absolute;
             background-color: #fff;
+            margin-top: 3%;
             overflow: hidden;
+            left: 10%;
             width: 80%;
-            height: 11%;
+            height: 120px;
+
             font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
             box-shadow:0px 5px 20px rgba(0,0,0,0.1);
             border-radius: 50px 50px 0 0;
@@ -52,7 +49,7 @@
         .nav_top_center {
             float: none;
             position: absolute;
-            left: 50%;
+            left: 45%;
             font-size: 2em;
             line-height: 45px;
         }
@@ -74,26 +71,29 @@
         }
 
         .nav_bottom {
-            position: relative;
+            position: absolute;
             background-color: #fff;
             overflow: hidden;
-            height: 40px;
+            left: 10%;
             width: 80%;
+            height: 50px;
+            margin: 9.5% auto;
             
             border-radius: 0 0 50px 50px;
             opacity: 0.8;
-            border-top: 1px solid red;
-            margin-top: 3px;
+            border-top: 1px solid red
         }
 
         .nav_bottom a {
             float: left;
             display: block;
             width: 20%;
-            height: 40px;
+            height: 50px;
+
             font-size: 1.2em;
             font-weight: bold;
             line-height: 40px;
+            
             text-decoration: none;
             text-align: center;
             color: #f22c2c;
@@ -112,22 +112,10 @@
             border-radius: 0 0 50px 0;
         }
 
-        main {
-            width: 200px;
-            height: 800px;
-        }
-
-        .section {
-            position: absolute;
-            left: 10%;
-            top: 22%;
-        }
-
         .search_bar {
-            position: fixed;
-            top: 50%;
+            position: absolute;
+            margin: 25% 0 0 -350px;
             left: 50%;
-            margin: -25px 0 0 -350px;
             height: 50px;
             width: 700px;
             border: 1px solid white;
@@ -187,6 +175,7 @@
             height: 200px;
             border: 1px solid white;
         }
+
     </style>
 </head>
 <body>
@@ -209,7 +198,7 @@
         <a href="forum.html">FORUM</a>
         <a href="about.html" class="right_side_tag">ABOUT US</a>
     </nav>
-
+    
     <section class="section">
         <div class="search_bar">
             <input id="textBox" type="text" placeholder="#Banana #Tomato #Milk">
@@ -223,7 +212,7 @@
     </section>
 	<script>
 		function myFunction()
-    {
+        {
 			console.log(document.getElementById("textBox").value);
             localStorage.setItem("testName",document.getElementById("textBox").value);
 
