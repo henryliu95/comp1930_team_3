@@ -119,117 +119,54 @@
             width: 100%;
         }
         
-        #box1 {
+        #box1, #box2, #box3, #box4 {
             position: absolute;
             border: 2px solid red;
-            top: 250px;
-            left: 200px;
             color: white;
-            height: 50px;
-            width: 200px;
+            background-color: rgba(255, 0, 0, 0.7);
             text-align: center;
-            line-height: 45px;
-            background-color: rgba(255, 0, 0, 0.7)
+            line-height: 400%;
+            width: 15%;
+            height: 12%;
+        }
+
+        #box1 {
+            top: 40%;
+            left: 10%;
         }
 
         #box2 {
-            position: absolute;
-            top: 250px;
-            left: 875px;
-            border: 2px solid red;
-            color: white;
-            height: 50px;
-            width: 200px;
-            text-align: center;
-            line-height: 45px;
-            background-color: rgba(255, 0, 0, 0.7)
+            top: 40%;
+            left: 74.5%;
         }
 
         #box3 {
-            position: absolute;
-            top: 450px;
-            left: 200px;
-            border: 2px solid red;
-            color: white;
-            height: 50px;
-            width: 200px;
-            text-align: center;
-            line-height: 45px;
-            background-color: rgba(255, 0, 0, 0.7)
+            top: 80%;
+            left: 10%;
         }
 
         #box4 {
-            position: absolute;
-            top: 450px;
-            left: 875px;
-            border: 2px solid red;
-            color: white;
-            height: 50px;
-            width: 200px;
-            text-align: center;
-            line-height: 45px;
-            background-color: rgba(255, 0, 0, 0.7)
+            top: 80%;
+            left: 74.5%;
         }
 
-        #box1 #popup1 {
-            display: none;
-        }
-
-        #box1:hover #popup1 {
-            display: block;
-            position: fixed;
-            top: 200px;
-            left: 425px;
-            height: 350px;
-            width: 425px;
-            color: white;
-            border: 2px solid red;
-            background-color: rgba(255, 0, 0, 0.7);
-        }
-
-        #box2 #popup2 {
-            display: none;
-        }
-
-        #box2:hover #popup2{
-            display: block;
-            position: fixed;
-            top: 200px;
-            left: 425px;
-            height: 350px;
-            width: 425px;
-            color: white;
-            border: 2px solid red;
-            background-color: rgba(255, 0, 0, 0.7);
-        }
-
-        #box3 #popup3 {
-            display: none;
-        }
-
-        #box3:hover #popup3{
-            display: block;
-            position: fixed;
-            top: 200px;
-            left: 425px;
-            height: 350px;
-            width: 425px;
-            color: white;
-            border: 2px solid red;
-            background-color: rgba(255, 0, 0, 0.7);
-        }
-
+        #box1 #popup1,
+        #box2 #popup2,
+        #box3 #popup3,
         #box4 #popup4 {
             display: none;
         }
 
-        #box4:hover #popup4{
+        #box1:hover #popup1,
+        #box2:hover #popup2,
+        #box3:hover #popup3,
+        #box4:hover #popup4 {
             display: block;
             position: fixed;
-            top: 200px;
-            left: 425px;
-            height: 350px;
-            width: 425px;
+            top: 35%;
+            left: 27.25%;
+            height: 60%;
+            width: 45%;
             color: white;
             border: 2px solid red;
             background-color: rgba(255, 0, 0, 0.7);
@@ -258,19 +195,19 @@
     </nav>
 
     <div id="box1">
-        <h2>Heading 1</h2>
+        <h3>Shelf Life</h3>
         <div id="popup1" style="display: none">some text here</div>
     </div>
     <div id="box2">
-        <h2>Heading 2</h2>
+        <h3>Storage</h3>
         <div id="popup2" style="display: none">some text here</div>
     </div>
     <div id="box3">
-        <h2>Heading 3</h2>
+        <h3>Signs of Expiration</h3>
         <div id="popup3" style="display: none">some text here</div>
     </div>
     <div id="box4">
-        <h2>Heading 4</h2>
+        <h3>Compost</h3>
         <div id="popup4" style="display: none">some text here</div>
     </div>
 	<!-- <div>
