@@ -1,4 +1,4 @@
-let addButton = document.getElementById("add_button");
+let addButton = document.getElementById("submit_btn");
 let input = document.getElementById("textBox");
 
 function addNClear(){
@@ -6,23 +6,16 @@ function addNClear(){
     input.value = "";
 }
 
-addButton.addEventListener("click", addNClear);
+addButton.addEventListener("click", function(){
+    add_item();
+    addNClear();
+});
+
 input.addEventListener("keydown", function(event){
     if (event.keyCode === 13){
         addNClear();
     }
 });        
-
-function myFunction(){
-    let myData = localStorage.getItem("testName");
-    document.getElementById("test").innerHTML = myData;
-};
-myFunction();
-
-function add_grocery(){
-    let item = document.getElementById("textBox").value
-    document.getElementById("item1").innerHTML = item;
-};
 
 function add_item() {
     let table = document.getElementById("groceryTable");
@@ -37,7 +30,6 @@ function add_item() {
     cell3.innerHTML = '<input class="expire_date" type="date">';
     cell4.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this)">';
 }
-
 
 function deleteRow(r) {
     let i = r.parentNode.parentNode.rowIndex;
