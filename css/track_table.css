@@ -1,17 +1,37 @@
+
 #groceryTable {
+    font-family: 'lato', sans-serif;
     position: absolute;
     margin-top: 20%;
     left: 10%;
     width: 80%;
     text-align: center;
-    background-color: white;
-    opacity: 0.8;
 }
 
-table {
+/* table {
     border: solid 4px white;
+} */
+
+#thead {
+    background-color: tomato;
+    /* opacity: 0.7; */
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    
 }
 
-th, td {
+th {
+    border-radius : 5px;
+    color: white;
+    padding: 1%;
+}
+
+td {
+    background-color: white;
+    color:tomato;
+    opacity: 0.9;
     border: solid 1px red;
+}
+
+.item {
+    padding: 1%;
 }

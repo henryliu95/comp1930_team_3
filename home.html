@@ -32,10 +32,10 @@
     <div id="content">
         <div id="radio_btn">
             <div class="toggle">
-                <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
-                <label id="info" for="sizeWeight">INFO</label>
-                <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
-                <label id="track" for="sizeDimensions">TRACK</label>
+                <input type="radio" name="sizeBy" value="weight" id="info" checked="checked" />
+                <label id="info_label" for="info">INFO</label>
+                <input type="radio" name="sizeBy" value="dimensions" id="track" />
+                <label id="track_label" for="track">TRACK</label>
             </div>
         </div>
         <div id="search_bar">
@@ -49,5 +49,12 @@
             </form> -->
         </div>
     </div>
+    <script>
+        if (document.getElementById('info').checked){
+            console.log("info");
+        }else if(document.getElementById('track').checked){
+            console.log("track");
+        }
+    </script>
 </body>
 </html>
