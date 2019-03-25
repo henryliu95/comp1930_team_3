@@ -17,6 +17,13 @@ input.addEventListener("keydown", function(event){
     }
 });        
 
+function getItemFromStorage(){
+	var myData = localStorage.getItem("testName");
+	console.log(myData);
+ 	document.getElementById("item1").innerHTML = myData;
+}
+getItemFromStorage();
+
 function add_item() {
     let table = document.getElementById("groceryTable");
     let row = table.insertRow(1);

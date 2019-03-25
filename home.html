@@ -40,21 +40,30 @@
         </div>
         <div id="search_bar">
             <input id="textBox" type="text" placeholder="#Banana #Tomato #Milk">
-            <button id="submit_btn" type="submit">ADD</button>
-            <!-- <form action="./information.html">
-                <button type="submit" onclick="myFunction()">INFO</button>
-            </form>
-            <form action="./tracking.html">
-                <button type="submit" onclick="myFunction()">TRACK</button>
-            </form> -->
+            <button id="submit_btn" type="submit" onclick="clickButton()">ADD</button>
         </div>
     </div>
-    <script>
-        if (document.getElementById('info').checked){
-            console.log("info");
-        }else if(document.getElementById('track').checked){
-            console.log("track");
-        }
-    </script>
+	<script>
+		let btn = document.getElementById('submit_btn');
+		function pageLoad(){
+			let infoChecked = document.getElementById("info");
+			let trackChecked = document.getElementById("track");
+
+
+			if (infoChecked.checked){
+				location.href = "./information.html"
+			}else if (trackChecked.checked){
+				location.href =  "./tracking.html"
+			}
+		}
+		function setItemToStorage(){
+			localStorage.setItem("testName", document.getElementById("textBox").value);
+		}
+
+		function clickButton(){
+			setItemToStorage();
+			pageLoad();
+		}
+	</script>
 </body>
 </html>
