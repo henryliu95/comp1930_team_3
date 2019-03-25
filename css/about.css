@@ -1,0 +1,39 @@
+html {
+    min-height: 120%;
+}
+
+#title {
+    position: absolute;
+    top: 10%;
+    margin: 10%;
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #f22c2c;
+}
+
+div.why {
+    position: absolute;
+    top: 90%;
+    margin: 10%;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #f22c2c;
+}
+
+div.goals {
+    position: absolute;
+    top: 220%;
+    margin: 10%;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #f22c2c;
+}
+
+div.app {
+    position: absolute;
+    top: 320%;
+    margin: 10%;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #f22c2c;
+}
