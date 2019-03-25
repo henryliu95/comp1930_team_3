@@ -4,6 +4,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forum</title>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAIdeL3cGuu_1PM7VosU0rnIKn9Qj2xI3E",
+            authDomain: "keepitfresh-ac6f9.firebaseapp.com",
+            databaseURL: "https://keepitfresh-ac6f9.firebaseio.com",
+            projectId: "keepitfresh-ac6f9",
+            storageBucket: "keepitfresh-ac6f9.appspot.com",
+            messagingSenderId: "7484472744"
+        };
+        firebase.initializeApp(config);
+
+        var newPostKey = firbase.database().ref().child('posts').push().key;
+
+        var postData = {
+            brdNo: newPostKey,
+            brdWriter: "",
+            brdTitle: "",
+            brdContents: "",
+            brdDate: Date.now()
+        };
+
+        var updates = {};
+        updates['/board/' + newPostKey] = postData;
+
+        firebase.database().ref().update(updates);
+
+    </script>
     <style>
         table {
             border: 1px solid black;
@@ -16,28 +45,5 @@
 </head>
 <body>
     <h1>Forum</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Title</th>
-                <th>Writer</th>
-                <th>Date</th>
-                <th>View</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr id="contents">
-            </tr>
-        </tbody>      
-    </table>
-
-    <script>
-        let table_row = document.createElement('td');
-        document.getElementById('contents').appendChild(table_row);
-        table_row.innerHTML = "hi";
-        
-    </script>
 </body>
 </html>
