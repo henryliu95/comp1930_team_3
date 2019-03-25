@@ -1,0 +1,17 @@
+#groceryTable {
+    position: absolute;
+    margin-top: 20%;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    opacity: 0.8;
+}
+
+table {
+    border: solid 4px white;
+}
+
+th, td {
+    border: solid 1px red;
+}

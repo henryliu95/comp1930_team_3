@@ -4,88 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forum</title>
-    <style>
-        @media (max-width: 1024px){
-            body {
-                width: 50%;
-            }
-        }
-        * {
-            font-family: "Raleway",Arial,sans-serif;
-            box-sizing: border-box;
-            margin: 0 auto;
-        }
-
-        body {
-            position: relative;
-            width: 100%;
-            z-index: -1;
-            background: url("images/veges.jpg") no-repeat fixed center;
-            background-size: cover;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        #header {
-            /* border: solid 1px #CCC; */
-            margin: 0;
-            width: 100%;
-        }
-
-        #header_sns, #header_nav {
-            width: 50%;
-            text-align: center;
-            margin-top: 1%; 
-            /* border: solid 1px #CCC; */
-        }
-
-        #sns_wrapper, #nav_wrapper {
-            text-align: center;
-            overflow: hidden;
-            width: 100%;
-            
-        }
-        #sns_wrapper .sns_item {
-            font-size: 1vw;
-            float: right;
-            margin-right: 1%;
-            font-size: 80%;
-        }
-
-        #sns_wrapper .sns_item a:hover,
-        #nav_wrapper .nav_item a:hover {
-            color: tomato;
-        }
-
-        #nav_wrapper .nav_item {
-            font-size: 1vw;
-            float: left; 
-            padding-left: 8%;
-            height: 100%;
-        }
-
-        #header_sns a {
-            font-weight: 900;
-            color: white;
-            letter-spacing: 3px;
-            display: inline-block;
-        }
-
-        #header_nav a {
-            font-weight: 900;
-            color: white;
-            letter-spacing: 5px;            
-            display: inline-block;
-        }
-
-        #logo {
-            /* width: 40%; */
-            font-size: 2vw;
-            font-weight: bolder;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/background.css">
 </head>
 <body>
     <div id="header">
@@ -107,34 +26,5 @@
             </div>
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAIdeL3cGuu_1PM7VosU0rnIKn9Qj2xI3E",
-            authDomain: "keepitfresh-ac6f9.firebaseapp.com",
-            databaseURL: "https://keepitfresh-ac6f9.firebaseio.com",
-            projectId: "keepitfresh-ac6f9",
-            storageBucket: "keepitfresh-ac6f9.appspot.com",
-            messagingSenderId: "7484472744"
-        };
-        firebase.initializeApp(config);
-
-        var newPostKey = firbase.database().ref().child('posts').push().key;
-
-        var postData = {
-            brdNo: newPostKey,
-            brdWriter: "hi",
-            brdTitle: "bye",
-            brdContents: "hi,bye",
-            brdDate: Date.now()
-        };
-
-        var updates = {};
-        updates['/board/' + newPostKey] = postData;
-
-        firebase.database().ref().update(updates);
-
-    </script>
 </body>
 </html>

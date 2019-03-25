@@ -8,7 +8,7 @@ body {
     position: relative;
     width: 100%;
     z-index: -1;
-    background: url("images/background_veges.jpg") no-repeat fixed center;
+    background: url("../images/veges.jpg") no-repeat fixed center;
     background-size: cover;
 }
 
@@ -51,7 +51,6 @@ a {
     font-size: 1vw;
     float: left; 
     padding-left: 8%;
-    height: 100%;
 }
 
 #header_sns a {

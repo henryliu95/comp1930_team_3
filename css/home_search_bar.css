@@ -1,0 +1,23 @@
+#textBox{
+    width: 90%;
+    padding: 2% 0;
+    float: left;
+    border: 1px solid white;
+    border-radius: 0 0 0 6px;
+    font-size: 1vw;
+    text-indent: 3%;
+    color: tomato;
+    opacity: 0.9;
+}
+
+#submit_btn {
+    background-color: tomato;
+    width: 10%;
+    padding: 2% 0;
+    color: white;
+    font-size: 1vw;
+    border: 1px solid tomato;
+    border-radius: 0 0 6px 0;
+    cursor: pointer;
+    opacity: 0.8;
+}
