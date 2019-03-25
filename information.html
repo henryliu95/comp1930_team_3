@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/search_bar.css">
     <link rel="stylesheet" href="./css/info_contents.css">
+
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyC79Hh-cfEC11x5_p5XLI2hlkXZUUQSooo",
+		authDomain: "keep-it-fresh-ddf5f.firebaseapp.com",
+		databaseURL: "https://keep-it-fresh-ddf5f.firebaseio.com",
+		projectId: "keep-it-fresh-ddf5f",
+		storageBucket: "keep-it-fresh-ddf5f.appspot.com",
+		messagingSenderId: "935147192047"
+	  };
+	  firebase.initializeApp(config);
+	</script>
 </head>
 <body>
     <div id="header">
@@ -126,6 +140,25 @@
         div4.onmouseout = function() {
             document.getElementById('popup4').style.display = 'none';
         };
+
+		var popupBox1 = document.getElementById("popup1");
+		var popupBox2 = document.getElementById("popup2");
+		var popupBox3 = document.getElementById("popup3");
+		var popupBox4 = document.getElementById("popup4");
+
+		const dbRefObject = firebase.database().ref().child('firebaseTest');
+		const dbRefBox1 = firebase.database().ref().child('food');
+
+		dbRefBox1.on('value', function(snapshot){ //snapshot is a pointer to a JSON object, which represents a snapshot of the database at this point in time 
+					popupBox1.innerText = snapshot.val().banana.popup1;
+					popupBox2.innerText = snapshot.val().banana.popup2;
+					popupBox3.innerText = snapshot.val().banana.popup3;
+					popupBox4.innerText = snapshot.val().banana.popup4;
+
+
+					console.log(snapshot.val());
+				  })
+	
 	</script>
 </body>
 </html>
