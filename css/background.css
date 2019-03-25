@@ -1,0 +1,122 @@
+* {
+    margin: 0 auto;
+}
+
+
+body {
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: -5;
+    background: url("../images/background_veges.jpg") no-repeat center center fixed;
+    background-size: 100%;
+}
+
+#nav {
+    position: relative;
+    height: 7%;
+}
+
+.nav_top {
+    position: absolute;
+    background-color: #fff;
+    margin-top: 3%;
+    overflow: hidden;
+    left: 10%;
+    width: 80%;
+    height: 120px;
+
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+    border-radius: 50px 50px 0 0;
+    opacity: 0.8;
+    border-bottom: 1px solid red;
+}
+
+.nav_top a {
+    float: left;
+    color: #f22c2c;
+    padding: 10px 15px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav_top_center {
+    float: none;
+    position: absolute;
+    left: 45%;
+    font-size: 2em;
+    line-height: 45px;
+}
+
+.nav_top_right {
+    position: absolute;
+    float: right;
+    bottom: 0;
+    right: 0;
+}
+
+.nav_top_right a:hover {
+    color: black;
+}
+
+.sign {
+    height: 30px;
+    line-height: 30px;
+}
+
+.nav_bottom {
+    position: absolute;
+    background-color: #fff;
+    overflow: hidden;
+    left: 10%;
+    width: 80%;
+    height: 50px;
+    margin: 9.5% auto;
+    
+    border-radius: 0 0 50px 50px;
+    opacity: 0.8;
+    border-top: 1px solid red
+}
+
+.nav_bottom a {
+    float: left;
+    display: block;
+    width: 20%;
+    height: 50px;
+
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 40px;
+    
+    text-decoration: none;
+    text-align: center;
+    color: #f22c2c;
+}
+
+.nav_bottom a:hover {
+    background-color: #f22c2c;
+    color: #fff;
+}
+
+.nav_bottom .left_side_tag {
+    border-radius: 0 0 0 50px;
+}
+
+.nav_bottom .right_side_tag {
+    border-radius: 0 0 50px 0;
+}
+
+.nav_bottom a:hover {
+    background-color: #f22c2c;
+    color: #fff;
+}
+
+.nav_bottom .left_side_tag {
+    border-radius: 0 0 0 50px;
+}
+
+.nav_bottom .right_side_tag {
+    border-radius: 0 0 50px 0;
+}

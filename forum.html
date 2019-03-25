@@ -4,8 +4,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forum</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+
+        table td{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     <h1>Forum</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Title</th>
+                <th>Writer</th>
+                <th>Date</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="contents">
+            </tr>
+        </tbody>      
+    </table>
+
+    <script>
+        let table_row = document.createElement('td');
+        document.getElementById('contents').appendChild(table_row);
+        table_row.innerHTML = "hi";
+        
+    </script>
 </body>
 </html>

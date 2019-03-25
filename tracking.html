@@ -4,116 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Track</title>
+    <link rel="stylesheet" type="text/css" href="css/background.css">
     <style>
-          * {
-            margin: 0 auto;
-        }
-
-        body {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            z-index: -5;
-            background: url("images/background_veges.jpg") no-repeat center center fixed;
-            background-size: 100%;
-        }
-
-        .nav_top {
-            position: absolute;
-            background-color: #fff;
-            margin: 50px auto;
-            overflow: hidden;
-            left: 10%;
-            width: 80%;
-            height: 120px;
-
-            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-            box-shadow:0px 5px 20px rgba(0,0,0,0.1);
-            border-radius: 50px 50px 0 0;
-            opacity: 0.8;
-            border-bottom: 1px solid red;
-        }
-
-        .nav_top a {
-            float: left;
-            color: #f22c2c;
-            padding: 10px 15px;
-            text-align: center;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .nav_top_center {
-            float: none;
-            position: absolute;
-            left: 45%;
-            font-size: 2em;
-            line-height: 45px;
-        }
-
-        .nav_top_right {
-            position: absolute;
-            float: right;
-            bottom: 0;
-            right: 0;
-        }
-
-        .nav_top_right a:hover {
-            color: black;
-        }
-
-        .sign {
-            height: 30px;
-            line-height: 30px;
-        }
-
-        .nav_bottom {
-            position: absolute;
-            background-color: #fff;
-            overflow: hidden;
-            left: 10%;
-            width: 80%;
-            height: 50px;
-            margin: 170px auto;
-            
-            border-radius: 0 0 50px 50px;
-            opacity: 0.8;
-            border-top: 1px solid red
-        }
-
-        .nav_bottom a {
-            float: left;
-            display: block;
-            width: 20%;
-            height: 50px;
-
-            font-size: 1.2em;
-            font-weight: bold;
-            line-height: 40px;
-            
-            text-decoration: none;
-            text-align: center;
-            color: #f22c2c;
-        }
-
-        .nav_bottom a:hover {
-            background-color: #f22c2c;
-            color: #fff;
-        }
-
-        .nav_bottom .left_side_tag {
-            border-radius: 0 0 0 50px;
-        }
-
-        .nav_bottom .right_side_tag {
-            border-radius: 0 0 50px 0;
-        }
-
         .search_bar {
             position: absolute;
-            margin: 15% 0 0 -350px;
+            margin: 15% 0 0 -18%;
             left: 50%;
             height: 5%;
             width: 37%;
@@ -155,9 +50,13 @@
             width: 100%;
         }
 
+        .table_div {
+            position: relative;
+        }
+
         #groceryTable {
             position: absolute;
-            top: 35%;
+            margin-top: 20%;
             left: 10%;
             width: 80%;
             text-align: center;
@@ -165,6 +64,9 @@
             opacity: 0.8;
         }
 
+        #table {
+            height: 20%;
+        }
         table {
             border: solid 4px white;
         }
@@ -172,64 +74,60 @@
         th, td {
             border: solid 1px red;
         }
-
     </style>
 </head>
 <body>
-    <nav class="nav_top">
-        <div class="nav_top_center">
-            <a href="home.html">KEEP IT<br>FRESH</a>
-        </div>
-        <div class="nav_top_right">
-            <a href="#sign_in" class="sign">SIGN IN</a>
-            <a href="#sign_up" class="sign">SIGN UP</a>
-            <a href="#facebook" class="social_media"><img src="images/facebook.png" alt="facebook_image"></a>
-            <a href="#instagram" class="social_media"><img src="images/instagram.png" alt="instagram_image"></a>
-            <a href="#twitter" class="social_media"><img src="images/twitter.png" alt="twitter_image"></a>
-        </div>
-    </nav>
-    <nav class="nav_bottom">
-        <a href="information.html" class="left_side_tag">INFO</a>
-        <a href="tracking.html">TRACK</a>
-        <a href="calendar.html">CALENDAR</a>
-        <a href="forum.html">FORUM</a>
-        <a href="about.html" class="right_side_tag">ABOUT US</a>
-    </nav>
+    <div id="nav">
+        <nav class="nav_top">
+            <div class="nav_top_center">
+                <a href="home.html">KEEP IT<br>FRESH</a>
+            </div>
+            <div class="nav_top_right">
+                <a href="#sign_in" class="sign">SIGN IN</a>
+                <a href="#sign_up" class="sign">SIGN UP</a>
+                <a href="#facebook" class="social_media"><img src="images/facebook.png" alt="facebook_image"></a>
+                <a href="#instagram" class="social_media"><img src="images/instagram.png" alt="instagram_image"></a>
+                <a href="#twitter" class="social_media"><img src="images/twitter.png" alt="twitter_image"></a>
+            </div>
+        </nav>
+        <nav class="nav_bottom">
+            <a href="information.html" class="left_side_tag">INFO</a>
+            <a href="tracking.html">TRACK</a>
+            <a href="calendar.html">CALENDAR</a>
+            <a href="forum.html">FORUM</a>
+            <a href="about.html" class="right_side_tag">ABOUT US</a>
+        </nav>
+    </div>
 
-	<div style="background-color:red;">
-		<p id="test"> hello </p>
-	</div>
-
-	<section class="section">
-        <div class="search_bar">
-            <input id="textBox" type="text" placeholder="#Banana #Tomato #Milk">
-			<form action="./tracking.html">
-                <button id="add_button" type="button">ADD</button>
-			</form>
-		</div>
-    </section>
-
-	<table id="groceryTable">
-	  <tr>
-		<th>Item Name</th>
-		<th>Purchase Date</th>
-        <th>Expiration Date</th>
-        <th></th>
-	  </tr>
-	  <tr>
-		<td id="item1">Banana</td>
-		<td><input class="date" type="date"></td>
-        <td><input class="expire_date" type="date"></td>
-        <td><input type="button" value="Remove" onclick="deleteRow(this)"></td>
-	  </tr>
-	  <tr>
-		<td>Item2</td>
-		<td><input class="date" type="date"></td>
-        <td><input class="expire_date" type="date"></td>
-        <td><input type="button" value="Remove" onclick="deleteRow(this)"></td>
-	  </tr>
-	</table>
-
+    <div class="search_bar">
+        <input id="textBox" type="text" placeholder="#Banana #Tomato #Milk">
+        <form action="./tracking.html">
+            <button id="add_button" type="button">ADD</button>
+        </form>
+    </div>
+    
+    <div id="table">
+        <table id="groceryTable">
+            <tr>
+                <th>Item Name</th>
+                <th>Purchase Date</th>
+                <th>Expiration Date</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td id="item1">Banana</td>
+                <td><input class="date" type="date"></td>
+                <td><input class="expire_date" type="date"></td>
+                <td><input type="button" value="Remove" onclick="deleteRow(this)"></td>
+            </tr>
+            <tr>
+                <td>Item2</td>
+                <td><input class="date" type="date"></td>
+                <td><input class="expire_date" type="date"></td>
+                <td><input type="button" value="Remove" onclick="deleteRow(this)"></td>
+            </tr>
+        </table>
+    </div>
 	<script>
 
         let addButton = document.getElementById("add_button");

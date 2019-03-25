@@ -1,228 +1,164 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>New</title>
+    <link rel="stylesheet" href="radio.css">
+</head>
     <style>
+        @media (max-width: 1024px){
+            body {
+                width: 50%;
+            }
+        }
         * {
+            font-family: "Raleway",Arial,sans-serif;
+            box-sizing: border-box;
             margin: 0 auto;
         }
 
         body {
             position: relative;
             width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            z-index: -5;
-            background: url("images/background_veges.jpg") no-repeat center center fixed;
-            background-size: 100%;
+            z-index: -1;
+            background: url("images/veges.jpg") no-repeat fixed center;
+            background-size: cover;
         }
 
-        .nav_top {
-            position: absolute;
-            background-color: #fff;
-            margin-top: 3%;
-            overflow: hidden;
-            left: 10%;
-            width: 80%;
-            height: 120px;
-
-            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-            box-shadow:0px 5px 20px rgba(0,0,0,0.1);
-            border-radius: 50px 50px 0 0;
-            opacity: 0.8;
-            border-bottom: 1px solid red;
-        }
-
-        .nav_top a {
-            float: left;
-            color: #f22c2c;
-            padding: 10px 15px;
-            text-align: center;
-            font-weight: bold;
+        a {
             text-decoration: none;
         }
 
-        .nav_top_center {
-            float: none;
-            position: absolute;
-            left: 45%;
-            font-size: 2em;
-            line-height: 45px;
+        #header {
+            /* border: solid 1px #CCC; */
+            margin: 0;
+            width: 100%;
         }
 
-        .nav_top_right {
-            position: absolute;
-            float: right;
-            bottom: 0;
-            right: 0;
-        }
-
-        .nav_top_right a:hover {
-            color: black;
-        }
-
-        .sign {
-            height: 30px;
-            line-height: 30px;
-        }
-
-        .nav_bottom {
-            position: absolute;
-            background-color: #fff;
-            overflow: hidden;
-            left: 10%;
-            width: 80%;
-            height: 50px;
-            margin: 9.5% auto;
-            
-            border-radius: 0 0 50px 50px;
-            opacity: 0.8;
-            border-top: 1px solid red
-        }
-
-        .nav_bottom a {
-            float: left;
-            display: block;
-            width: 20%;
-            height: 50px;
-
-            font-size: 1.2em;
-            font-weight: bold;
-            line-height: 40px;
-            
-            text-decoration: none;
+        #header_sns, #header_nav {
+            width: 50%;
             text-align: center;
-            color: #f22c2c;
+            margin-top: 1%; 
+            /* border: solid 1px #CCC; */
         }
 
-        .nav_bottom a:hover {
-            background-color: #f22c2c;
-            color: #fff;
+        #sns_wrapper, #nav_wrapper {
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            
         }
-
-        .nav_bottom .left_side_tag {
-            border-radius: 0 0 0 50px;
-        }
-
-        .nav_bottom .right_side_tag {
-            border-radius: 0 0 50px 0;
-        }
-
-        .search_bar {
-            position: absolute;
-            margin: 25% 0 0 -350px;
-            left: 50%;
-            height: 50px;
-            width: 700px;
-            border: 1px solid white;
-            background-color: #fff;
-            border-radius: 30px;
-        }
-
-        .search_bar input {
-            float: left;
-            box-sizing: border-box;
-            border: 0px;
-            width: 580px;
-            font-size: 1.3em;
-            padding: 12px 30px;
-            outline: none;
-            border-radius: 30px 0 0 30px;
-            color: red;
-        }
-
-        .search_bar button {
+        #sns_wrapper .sns_item {
+            font-size: 1vw;
             float: right;
-            box-sizing: border-box;
-            border: 0px;
-            width: 120px;
+            margin-right: 1%;
+            font-size: 80%;
+        }
+
+        #sns_wrapper .sns_item a:hover,
+        #nav_wrapper .nav_item a:hover {
+            color: tomato;
+        }
+
+        #nav_wrapper .nav_item {
+            font-size: 1vw;
+            float: left; 
+            padding-left: 8%;
             height: 100%;
-            background-color: #f75935;
-            cursor: pointer;
+        }
+
+        #header_sns a {
+            font-weight: 900;
             color: white;
-            font-size: 1.3em;
-            border-radius: 0 30px 30px 0;
+            letter-spacing: 3px;
+            display: inline-block;
         }
 
-        .infotrack {
-            position: absolute;
-            left: 40%;
-            top: 40%;
-        }
-
-        .activeclick button{
-            float: center;
-            box-sizing: border-box;
-            border: 0px;
-            width: 120px;
-            height: 100%;
-            background-color: #f75935;
-            cursor: pointer;
+        #header_nav a {
+            font-weight: 900;
             color: white;
-            font-size: 1.3em;
-            border-radius: 0 0px 0px 0;
+            letter-spacing: 5px;            
+            display: inline-block;
         }
 
-        .footer {
-            position:absolute;
-            bottom: 0;
-            left: 10%;
-            width: 80%;
-            height: 200px;
+        #logo {
+            /* width: 40%; */
+            font-size: 2vw;
+            font-weight: bolder;
+        }
+
+        #textBox{
+            width: 90%;
+            padding: 2% 0;
+            float: left;
             border: 1px solid white;
+            border-radius: 0 0 0 6px;
+            font-size: 1vw;
+            text-indent: 3%;
+            color: tomato;
+            opacity: 0.9;
         }
 
+        #submit_btn {
+            background-color: tomato;
+            width: 10%;
+            padding: 2% 0;
+            color: white;
+            font-size: 1vw;
+            border: 1px solid tomato;
+            border-radius: 0 0 6px 0;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        
+        #footer{
+            /* border: solid 1px #CCC; */
+        }
     </style>
-</head>
 <body>
-    <nav class="nav_top">
-        <div class="nav_top_center">
-            <a href="home.html">KEEP IT<br>FRESH</a>
+    <div id="header">
+        <div id="header_sns">
+            <div id="sns_wrapper"> 
+                <div class="sns_item"><a href="#instagram" class="social_media"><img src="images/instagram.png" alt="instagram_image"></a></div>
+                <div class="sns_item"><a href="#facebook" class="social_media"><img src="images/facebook.png" alt="facebook_image"></a></div>
+                <div class="sns_item"><a href="#sign_up" class="sign">SIGN UP</a></div>
+                <div class="sns_item"><a href="#sign_in" class="sign">SIGN IN</a></div>
+            </div>
         </div>
-        <div class="nav_top_right">
-            <a href="#sign_in" class="sign">SIGN IN</a>
-            <a href="#sign_up" class="sign">SIGN UP</a>
-            <a href="#facebook" class="social_media"><img src="images/facebook.png" alt="facebook_image"></a>
-            <a href="#instagram" class="social_media"><img src="images/instagram.png" alt="instagram_image"></a>
-            <a href="#twitter" class="social_media"><img src="images/twitter.png" alt="twitter_image"></a>
+        <div id="header_nav">
+            <div id="nav_wrapper">
+                <div class="nav_item"><a href="#info">INFO</a></div>
+                <div class="nav_item"><a href="#track">TRACK</a></div>
+                <div class="nav_item logo"><a id="logo" href="#home">KEEPIT<br/>FRESH</a></div>
+                <div class="nav_item"><a href="#forum">FORUM</a></div>
+                <div class="nav_item"><a href="#about_us">ABOUT US</a></div>
+            </div>
         </div>
-    </nav>
-    <nav class="nav_bottom">
-        <a href="information.html" class="left_side_tag">INFO</a>
-        <a href="tracking.html">TRACK</a>
-        <a href="calendar.html">CALENDAR</a>
-        <a href="forum.html">FORUM</a>
-        <a href="about.html" class="right_side_tag">ABOUT US</a>
-    </nav>
-    
-    <section class="section">
-        <div class="search_bar">
+    </div>
+    <div id="content">
+        <div id="radio_btn">
+            <div class="toggle">
+                <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
+                <label id="info" for="sizeWeight">INFO</label>
+                <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
+                <label id="track" for="sizeDimensions">TRACK</label>
+            </div>
+        </div>
+        <div id="search_bar">
             <input id="textBox" type="text" placeholder="#Banana #Tomato #Milk">
-			<form action="./information.html">
-				<button type="submit" onclick="myFunction()">INFO</button>
-			</form>
-			<form action="./tracking.html">
-				<button type="submit" onclick="myFunction()">TRACK</button>
-			</form>
+            <button id="submit_btn" type="submit">ADD</button>
+            <!-- <form action="./information.html">
+                <button type="submit" onclick="myFunction()">INFO</button>
+            </form>
+            <form action="./tracking.html">
+                <button type="submit" onclick="myFunction()">TRACK</button>
+            </form> -->
         </div>
-    </section>
-	<script>
-		function myFunction()
-        {
-			console.log(document.getElementById("textBox").value);
-            localStorage.setItem("testName",document.getElementById("textBox").value);
-
-        }
-	</script>
-
-    <footer>
-        <div class="footer">
-
-        </div>
-    </footer>
+    </div>
+    <div id="footer">
+        
+    </div>
 </body>
 </html>
