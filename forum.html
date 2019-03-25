@@ -4,6 +4,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forum</title>
+    <style>
+        @media (max-width: 1024px){
+            body {
+                width: 50%;
+            }
+        }
+        * {
+            font-family: "Raleway",Arial,sans-serif;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        body {
+            position: relative;
+            width: 100%;
+            z-index: -1;
+            background: url("images/veges.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #header {
+            /* border: solid 1px #CCC; */
+            margin: 0;
+            width: 100%;
+        }
+
+        #header_sns, #header_nav {
+            width: 50%;
+            text-align: center;
+            margin-top: 1%; 
+            /* border: solid 1px #CCC; */
+        }
+
+        #sns_wrapper, #nav_wrapper {
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            
+        }
+        #sns_wrapper .sns_item {
+            font-size: 1vw;
+            float: right;
+            margin-right: 1%;
+            font-size: 80%;
+        }
+
+        #sns_wrapper .sns_item a:hover,
+        #nav_wrapper .nav_item a:hover {
+            color: tomato;
+        }
+
+        #nav_wrapper .nav_item {
+            font-size: 1vw;
+            float: left; 
+            padding-left: 8%;
+            height: 100%;
+        }
+
+        #header_sns a {
+            font-weight: 900;
+            color: white;
+            letter-spacing: 3px;
+            display: inline-block;
+        }
+
+        #header_nav a {
+            font-weight: 900;
+            color: white;
+            letter-spacing: 5px;            
+            display: inline-block;
+        }
+
+        #logo {
+            /* width: 40%; */
+            font-size: 2vw;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="header_sns">
+            <div id="sns_wrapper"> 
+                <div class="sns_item"><a href="#instagram" class="social_media"><img src="images/instagram.png" alt="instagram_image"></a></div>
+                <div class="sns_item"><a href="#facebook" class="social_media"><img src="images/facebook.png" alt="facebook_image"></a></div>
+                <div class="sns_item"><a href="#sign_up" class="sign">SIGN UP</a></div>
+                <div class="sns_item"><a href="#sign_in" class="sign">SIGN IN</a></div>
+            </div>
+        </div>
+        <div id="header_nav">
+            <div id="nav_wrapper">
+                <div class="nav_item"><a href="./information.html">INFO</a></div>
+                <div class="nav_item"><a href="./tracking.html">TRACK</a></div>
+                <div class="nav_item logo"><a id="logo" href="./home.html">KEEP IT<br/>FRESH</a></div>
+                <div class="nav_item"><a href="./forum.html">FORUM</a></div>
+                <div class="nav_item"><a href="./about.html">ABOUT US</a></div>
+            </div>
+        </div>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -21,9 +124,9 @@
 
         var postData = {
             brdNo: newPostKey,
-            brdWriter: "",
-            brdTitle: "",
-            brdContents: "",
+            brdWriter: "hi",
+            brdTitle: "bye",
+            brdContents: "hi,bye",
             brdDate: Date.now()
         };
 
@@ -33,17 +136,5 @@
         firebase.database().ref().update(updates);
 
     </script>
-    <style>
-        table {
-            border: 1px solid black;
-        }
-
-        table td{
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
-    <h1>Forum</h1>
 </body>
 </html>
