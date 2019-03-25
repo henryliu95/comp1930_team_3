@@ -46,11 +46,29 @@ html {
     position: relative;
     height: 450%;
     width: 250%;
-    left: -1%;
-    top: 50%;
     color: white;
     background-color: tomato;
     opacity: 0.9;
+}
+
+#box1:hover #popup1 {
+    left: -1%;
+    top: 60%;
+}
+
+#box2:hover #popup2 {
+    left: -149%;
+    top: 60%;
+}
+
+#box3:hover #popup3 {
+    top: -605%;
+    left: -1%;
+}
+
+#box4:hover #popup4 {
+    top: -605%;
+    left: -149%;
 }
 
 #box2:hover #popup2,
@@ -59,8 +77,6 @@ html {
     color: white;
     height: 450%;
     width: 250%;
-    left: -149%;
-    top: 50%;
     background-color: tomato;
     opacity: 0.9;
 }
