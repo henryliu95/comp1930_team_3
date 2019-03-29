@@ -148,10 +148,10 @@
 		const dbRefBox1 = firebase.database().ref().child('food');
 
 		dbRefBox1.on('value', function(snapshot){ //snapshot is a pointer to a JSON object, which represents a snapshot of the database at this point in time 
-					popupBox1.innerText = snapshot.val().banana.popup1;
-					popupBox2.innerText = snapshot.val().banana.popup2;
-					popupBox3.innerText = snapshot.val().banana.popup3;
-					popupBox4.innerText = snapshot.val().banana.popup4;
+					popupBox1.innerText = snapshot.val().banana.shelf_life;
+					popupBox2.innerText = snapshot.val().banana.storage;
+					popupBox3.innerText = snapshot.val().banana.expire_signs;
+					popupBox4.innerText = snapshot.val().banana.disposal;
 
 
 					console.log(snapshot.val());
