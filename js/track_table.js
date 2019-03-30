@@ -7,7 +7,6 @@ function addNClear(){
 }
 
 addButton.addEventListener("click", function(){
-    add_item();
     addNClear();
 });
 
