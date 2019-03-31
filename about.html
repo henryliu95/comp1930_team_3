@@ -6,13 +6,25 @@
     <title>ABOUT US</title>
     <link rel="stylesheet" href="./css/background.css">
 	<link rel="stylesheet" href="./css/about.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>    
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC79Hh-cfEC11x5_p5XLI2hlkXZUUQSooo",
+        authDomain: "keep-it-fresh-ddf5f.firebaseapp.com",
+        databaseURL: "https://keep-it-fresh-ddf5f.firebaseio.com",
+        projectId: "keep-it-fresh-ddf5f",
+        storageBucket: "keep-it-fresh-ddf5f.appspot.com",
+        messagingSenderId: "935147192047"
+      };
+      firebase.initializeApp(config);
+    </script>
 </head>
 <body>
     <div id="header">
             <div id="header_sns">
                 <div id="sns_wrapper"> 
-                    <div class="sns_item"><a href="#sign_up" class="sign">SIGN UP</a></div>
-                    <div class="sns_item"><a href="#sign_in" class="sign">SIGN IN</a></div>
+                    <div class="sns_item"><a href="./sign_in.html" class="sign" id="login">LOGIN/REGISTER</a></div>
                 </div>
             </div>
             <div id="header_nav">
@@ -54,5 +66,22 @@
 		</ul>
 	</p>
 	</div>
+
+	<script>
+		function change_login(){
+            firebase.auth().onAuthStateChanged(function(user) {
+              if (user) {
+                // User is signed in.
+                console.log("below is the UID of the logged in storage.")
+                console.log(user.uid)
+                document.getElementById("login").innerHTML = "SIGN OUT";
+              } else {
+                // No user is signed in.
+                console.log("no user signed in at the moment")
+              }
+            });
+                    }
+        change_login();
+	</script>
 </body>
 </html>
