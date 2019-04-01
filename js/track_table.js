@@ -1,9 +1,15 @@
 let addButton = document.getElementById("submit_btn");
 let input = document.getElementById("textBox");
 
+var userId = null;
+firebase.auth().onAuthStateChanged(function(user) {
+  userId = user.uid;
+});
+
 function addNClear(){
     add_item();
     input.value = "";
+    location.reload();  // have to call reload, else it loads the database everytime I add new item .. can't delete rows using deleteRow()
 }
 
 addButton.addEventListener("click", function(){
@@ -16,25 +22,48 @@ input.addEventListener("keydown", function(event){
     }
 });        
 
-function getItemFromStorage(){
-	var myData = localStorage.getItem("testName");
-	console.log(myData);
- 	document.getElementById("item1").innerHTML = myData;
-}
-getItemFromStorage();
+// function getItemFromStorage(){
+// 	var myData = localStorage.getItem("testName");
+// 	console.log(myData);
+//  	document.getElementById("item1").innerHTML = myData;
+// }
+// getItemFromStorage();
 
-function add_item() {
-    let table = document.getElementById("groceryTable");
-    let row = table.insertRow(1);
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    let cell4 = row.insertCell(3);
+firebase.auth().onAuthStateChanged(function(user) {
+
+  console.log(user.uid);
+  dbRefBox1 = firebase.database().ref().child(user.uid);
+  dbRefBox1.on('value', function(snapshot){
+      let table = document.getElementById("groceryTable");
+
+
+      console.log("snapshot" + snapshot.childrenCount);
+      snapshot.forEach((userSnapshot)=>{ // grabs every key under the current userID
+        console.log(userSnapshot.key);
+        if (userSnapshot.key != "userId"){
+          let row = table.insertRow(1);
+          let cell1 = row.insertCell(0);
+          let cell2 = row.insertCell(1);
+          let cell3 = row.insertCell(2);
+          let cell4 = row.insertCell(3);
+          cell1.innerHTML = userSnapshot.key;
+          cell2.innerHTML = '<input class="date" type="date">';
+          cell3.innerHTML = '<input class="expire_date" type="date">';
+          cell4.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this)">';
+        }
+
+       })
+      //document.getElementById("item1").innerHTML = snapshot.val().key;
+
+  })
+});
+
+function add_item() { // adds this to the firebase realtime database
     let item = document.getElementById("textBox").value;
-    cell1.innerHTML = item;
-    cell2.innerHTML = '<input class="date" type="date">';
-    cell3.innerHTML = '<input class="expire_date" type="date">';
-    cell4.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this)">';
+
+     firebase.database().ref(userId).child(item).update({
+      name:item + "1",
+     });
 }
 
 function deleteRow(r) {
