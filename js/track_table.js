@@ -1,11 +1,6 @@
 let addButton = document.getElementById("submit_btn");
 let input = document.getElementById("textBox");
 
-var userId = null;
-firebase.auth().onAuthStateChanged(function(user) {
-  userId = user.uid;
-});
-
 function addNClear(){
     add_item();
     input.value = "";
@@ -22,47 +17,30 @@ input.addEventListener("keydown", function(event){
     }
 });        
 
-// function getItemFromStorage(){
-// 	var myData = localStorage.getItem("testName");
-// 	console.log(myData);
-//  	document.getElementById("item1").innerHTML = myData;
-// }
-// getItemFromStorage();
+var dateControl = document.querySelector('#expire_date');
 
-firebase.auth().onAuthStateChanged(function(user) {
+function confirmExpireDate(){
+  let date2 = new Date($('#purchase_date').val());
+  let day2 = date2.getDate() + 7;
+  if (date2.getMonth() < 10){
+      var month2 = "0" + (date2.getMonth() + 1);
+  } else {
+      var month2 = date2.getMonth() +1;
+  }
+  let year2 = date2.getFullYear();
+  dateControl.value = year2 + "-" + month2 + "-" + day2;
+}
 
-  console.log(user.uid);
-  dbRefBox1 = firebase.database().ref().child(user.uid);
-  dbRefBox1.on('value', function(snapshot){
-      let table = document.getElementById("groceryTable");
-
-
-      console.log("snapshot" + snapshot.childrenCount);
-      snapshot.forEach((userSnapshot)=>{ // grabs every key under the current userID
-        console.log(userSnapshot.key);
-        if (userSnapshot.key != "userId"){
-          let row = table.insertRow(1);
-          let cell1 = row.insertCell(0);
-          let cell2 = row.insertCell(1);
-          let cell3 = row.insertCell(2);
-          let cell4 = row.insertCell(3);
-          cell1.innerHTML = userSnapshot.key;
-          cell2.innerHTML = '<input class="date" type="date">';
-          cell3.innerHTML = '<input class="expire_date" type="date">';
-          cell4.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this)">';
-        }
-
-       })
-      //document.getElementById("item1").innerHTML = snapshot.val().key;
-
-  })
-});
+function handler(e){
+  confirmExpireDate();
+}
 
 function add_item() { // adds this to the firebase realtime database
     let item = document.getElementById("textBox").value;
-
      firebase.database().ref(userId).child(item).update({
       name:item + "1",
+      // purchaseDate: 
+      // expireDate:
      });
 }
 
@@ -70,18 +48,3 @@ function deleteRow(r) {
     let i = r.parentNode.parentNode.rowIndex;
     document.getElementById("groceryTable").deleteRow(i);
 }
-
-function change_login(){
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        console.log("below is the UID of the logged in storage.")
-        console.log(user.uid)
-        document.getElementById("login").innerHTML = "SIGN OUT";
-      } else {
-        // No user is signed in.
-        console.log("no user signed in at the moment")
-      }
-    });
-            }
-change_login();
