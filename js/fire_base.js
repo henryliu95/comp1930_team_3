@@ -7,10 +7,11 @@ var config = {
   messagingSenderId: "935147192047"
 };
 firebase.initializeApp(config);
-
+var signInState = false;
 var userId = "";
 firebase.auth().onAuthStateChanged(function(user) {
   userId = user.uid;
+  signInState = true;
   console.log("userId: " + userId);
   Getname("Milk");
 });
@@ -57,17 +58,42 @@ firebase.auth().onAuthStateChanged(function(user) {
   })
 });
 
-function change_login(){
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      // console.log("below is the UID of the logged in storage.")
-      // console.log(user.uid)
-      document.getElementById("login").innerHTML = "SIGN OUT";
-    } else {
-      // No user is signed in.
-      console.log("no user signed in at the moment")
-    }
-  });
-          }
-change_login();
+function on_login(){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        console.log("below is the UID of the logged in storage.")
+        console.log(user.uid)
+        //document.getElementById("login").innerHTML = "SIGN OUT";
+        document.getElementById("login").style.display = "none";
+      } else {
+        // No user is signed in.
+        console.log("no user signed in at the moment")
+      }
+    });
+            }
+
+  // function sign_out(){
+  //   firebase.auth().signout();
+  //   firebase.auth().onAuthStateChanged(function(user){
+  //     if (user){
+  //       console.log("Should be signed out.");
+  //     }
+  //   })
+  //   on_logout();
+  // }
+
+
+  document.getElementById('logout').addEventListener('click', function(event){
+    firebase.auth().signOut();
+    console.log("Signing out...")
+    signInState = false;
+    on_logout();
+  })
+
+
+  function on_logout(){
+    document.getElementById('logout').style.display = 'none';
+    console.log("Logged out")
+  }
+on_login();
