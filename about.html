@@ -2,41 +2,41 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>ABOUT US</title>
-    <link rel="stylesheet" href="./css/background.css">
+  <meta charset="utf-8" />
+  <title>ABOUT US</title>
+  <link rel="stylesheet" href="./css/background.css">
 	<link rel="stylesheet" href="./css/about.css">
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>    
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyC79Hh-cfEC11x5_p5XLI2hlkXZUUQSooo",
-        authDomain: "keep-it-fresh-ddf5f.firebaseapp.com",
-        databaseURL: "https://keep-it-fresh-ddf5f.firebaseio.com",
-        projectId: "keep-it-fresh-ddf5f",
-        storageBucket: "keep-it-fresh-ddf5f.appspot.com",
-        messagingSenderId: "935147192047"
-      };
-      firebase.initializeApp(config);
-    </script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>    
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC79Hh-cfEC11x5_p5XLI2hlkXZUUQSooo",
+      authDomain: "keep-it-fresh-ddf5f.firebaseapp.com",
+      databaseURL: "https://keep-it-fresh-ddf5f.firebaseio.com",
+      projectId: "keep-it-fresh-ddf5f",
+      storageBucket: "keep-it-fresh-ddf5f.appspot.com",
+      messagingSenderId: "935147192047"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 <body>
-    <div id="header">
-            <div id="header_sns">
-                <div id="sns_wrapper"> 
-                    <div class="sns_item"><a href="./sign_in.html" class="sign" id="login">LOGIN/REGISTER</a></div>
-                </div>
-            </div>
-            <div id="header_nav">
-                <div id="nav_wrapper">
-                    <div class="nav_item"><a href="./information.html">INFO</a></div>
-                    <div class="nav_item"><a href="./tracking.html">TRACK</a></div>
-                    <div class="nav_item logo"><a id="logo" href="./home.html">KEEP IT<br/>FRESH</a></div>
-                    <div class="nav_item"><a href="./forum.html">FORUM</a></div>
-                    <div class="nav_item"><a href="./about.html">ABOUT US</a></div>
-                </div>
-            </div>
+  <div id="header">
+    <div id="header_sns">
+        <div id="sns_wrapper"> 
+            <div class="sns_item"><a href="./sign_in.html" class="sign" id="login">LOGIN/REGISTER</a></div>
         </div>
+    </div>
+    <div id="header_nav">
+      <div id="nav_wrapper">
+        <div class="nav_item"><a href="./information.html">INFO</a></div>
+        <div class="nav_item"><a href="./tracking.html">TRACK</a></div>
+        <div class="nav_item logo"><a id="logo" href="./home.html">KEEP IT<br/>FRESH</a></div>
+        <div class="nav_item"><a href="./forum.html">FORUM</a></div>
+        <div class="nav_item"><a href="./about.html">ABOUT US</a></div>
+      </div>
+    </div>
+  </div>
 
 	<h1 id="title">About Us</h1>
 
@@ -49,39 +49,24 @@
 	</div>
 
 	<div class="goals">
-	<h2><u>Our Goal</u></h2>
-	<p>To reduce the amount of food waste by providing a tool to our users that allows them to know more <em>info</em> about their food items and to keep <em>track</em> of them.</p>
+    <h2><u>Our Goal</u></h2>
+    <p>To reduce the amount of food waste by providing a tool to our users that allows them to know more <em>info</em> about their food items and to keep <em>track</em> of them.</p>
 	</div>
 
 	<div class="app">
-	<h2><u>What our application does</u></h2>
-	<p>The focus of our app is in our two functions, which are: 
-		<ul>
-			<li><h3>Info</h3></li>
-				<p>By inputting a food item that is within our database, you can find out specific information about that item. The information that you can find relates to
-					its shelf life, how to properly store it, finding out if it's still edible or if it's spoiled, and methods to correctly dispose of it.</p>
-			<li><h3>Track</h3></li>
-				<p>Food items in your fridge or pantry can be added to this function to monitor their expiration dates so that users can be reminded to use them before they spoil.
-					This can be also tailored as a grocery list tracker, where items can be added as they're bought. </p>
-		</ul>
-	</p>
-	</div>
-
-	<script>
-		function change_login(){
-            firebase.auth().onAuthStateChanged(function(user) {
-              if (user) {
-                // User is signed in.
-                console.log("below is the UID of the logged in storage.")
-                console.log(user.uid)
-                document.getElementById("login").innerHTML = "SIGN OUT";
-              } else {
-                // No user is signed in.
-                console.log("no user signed in at the moment")
-              }
-            });
-                    }
-        change_login();
-	</script>
+    <h2><u>What our application does</u></h2>
+    <p>The focus of our app is in our two functions, which are: 
+      <ul>
+        <li><h3>Info</h3></li>
+        <p>By inputting a food item that is within our database, you can find out specific information about that item. The information that you can find relates to
+            its shelf life, how to properly store it, finding out if it's still edible or if it's spoiled, and methods to correctly dispose of it.</p>
+        <li><h3>Track</h3></li>
+        <p>Food items in your fridge or pantry can be added to this function to monitor their expiration dates so that users can be reminded to use them before they spoil.
+            This can be also tailored as a grocery list tracker, where items can be added as they're bought. </p>
+      </ul>
+	  </p>
+  </div>
+  
+  <script src="./js/about.js"></script>
 </body>
 </html>
