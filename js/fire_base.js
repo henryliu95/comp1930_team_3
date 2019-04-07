@@ -8,50 +8,46 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// var signInState = false;
-// var userId = "";
-// firebase.auth().onAuthStateChanged(function(user) {
-//   userId = user.uid;
-//   signInState = true;
-//   console.log("userId(auth): " + userId);
-//   getName("Banana");
-// });
+var userId = "";
+firebase.auth().onAuthStateChanged(function(user) {
+  userId = user.uid;
+  console.log(userId);
+});
 
 function getName(food){
-  //console.log(collection);
   var dbRef = firebase.database().ref(userId + "/" + food + "/"); // ref goes to the URL, so we need to go to teams first to access teams99, also need closing "/"
   dbRef.once('value', function(snapshot){
-    //console.log(snapshot.val());
     list = snapshot.val();
     for (x in list){
       console.log("key:" + x);
       console.log("value::" + list[x]);
+      console.log("key:" + key);
     }
    }) 
 }
 
 firebase.auth().onAuthStateChanged(function(user) {
   dbRefBox1 = firebase.database().ref().child(user.uid);
-  dbRefBox1.on('value', function(snapshot){
+  dbRefBox1.once('value', function(snapshot){
       let table = document.getElementById("groceryTable");
-      snapshot.forEach((userSnapshot)=>{ // grabs every key under the current userID
-        if (userSnapshot.key != "userId"){
+      keys = snapshot.val();
+      for (key in keys){
+          console.log("key:" + key);
+          console.log("secondKey:" + keys[key]["name"]);
+          console.log("secondKey:" + keys[key]["purchaseDate"]);
+          console.log("secondKey:" + keys[key]["expireDate"]);
           let row = table.insertRow(1);
           let cell1 = row.insertCell(0);
           let cell2 = row.insertCell(1);
           let cell3 = row.insertCell(2);
           let cell4 = row.insertCell(3);
-          cell1.innerHTML = userSnapshot.key;
-          cell2.innerHTML = '<input id="purchase_date" type="date" onchange="getIndexNum();">';
-          document.getElementById('purchase_date').classList.add(userSnapshot.key + "PD");
-          cell3.innerHTML = '<input id="expire_date" type="date" oninput="getExpireDate(event)">';
-          document.getElementById('expire_date').classList.add(userSnapshot.key + "ED");
+          cell1.innerHTML = keys[key]["name"];
+          cell2.innerHTML = keys[key]["purchaseDate"]
+          cell3.innerHTML = keys[key]["expireDate"]
           cell4.innerHTML = '<input type="button" value="Delete" onclick="deleteItem(this)">';
         }
-       })
-      //  ' + userSnapshot.key + '
-  })
-});
+    })
+})
 
 function on_login(){
     firebase.auth().onAuthStateChanged(function(user) {
