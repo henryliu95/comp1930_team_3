@@ -7,15 +7,12 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/search_bar.css">
     <link rel="stylesheet" href="./css/track_table.css">
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 </head>
 <body>
     <div id="header">
         <div id="header_sns">
             <div id="sns_wrapper">
                     <div class="sns_item"><a href="./sign_in.html" class="sign" id="login">LOGIN/REGISTER</a></div>
-                    <div class="sns_item"><a href="./tracking.html" class="sign" id="logout">SIGN-OUT</a></div>
             </div>
         </div>
         <div id="header_nav">
@@ -44,16 +41,17 @@
                 <th id="eDate">Expiration Date</th>
                 <th id="deleteCon">Remove Item</th>
             </tr>
-            <tr id="tcontents">
+            <!-- <tr id="tcontents">
                 <td id="item1">Banana</td>
-                <td><input type="date" id="purchase_date" onchange="handler(event);"></td>
+                <td><input type="date" id="purchase_date" onchange="handler(event)"></td>
                 <td><input type="date" id="expire_date"></td>
                 <td><input type="button" value="Delete" onclick="deleteRow(this)"></td>
-            </tr>
+            </tr> -->
         </table>
     </div>
-    
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="./js/fire_base.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="./js/track_table.js"></script>
 </body>
 </html>

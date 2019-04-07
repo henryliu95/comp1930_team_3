@@ -92,13 +92,9 @@ dbRefBox1.on('value', function(snapshot){ //snapshot is a pointer to a JSON obje
            popupBox1.innerText = snapshot.val()[ingredient].shelf_life;
            popupBox2.innerText = snapshot.val()[ingredient].storage;
            popupBox3.innerText = snapshot.val()[ingredient].expire_signs;
-           popupBox4.innerText = snapshot.val()[ingredient].disposal;
-
-
+           popupBox4.innerText = snapshot.val()[ingredient].disposal
            console.log(snapshot.val());
          })
-
-
 }
 fire();
 
