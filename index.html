@@ -4,16 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/background.css">
+    <link rel="stylesheet" href="./css/radio.css">
+    <link rel="stylesheet" href="./css/home_search_bar.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="./js/firebase_initialization.js"></script>
 </head>
 <body>
-    <h1>Index page</h1>
-    <p>This is index page!</p>
-
-    <p>1. Yongju Kwon</p>
-    <p>2. Geoff Hui</p>
-	<p>3. Henry Liu</p>
-	
-
+    <div id="header">
+        <div id="header_sns">
+            <div id="sns_wrapper"> 
+                <div class="sns_item"><a href="./sign_in.html" class="sign" id="login">LOGIN/REGISTER</a></div>
+            </div>
+        </div>
+        <div id="header_nav">
+            <div id="nav_wrapper">
+                <div class="nav_item"><a href="./information.html">INFO</a></div>
+                <div class="nav_item"><a href="./tracking.html">TRACK</a></div>
+                <div class="nav_item logo"><a id="logo" href="./home.html">KEEP IT<br/>FRESH</a></div>
+                <div class="nav_item"><a href="./forum.html">FORUM</a></div>
+                <div class="nav_item"><a href="./about.html">ABOUT US</a></div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="radio_btn">
+            <div class="toggle">
+                <input type="radio" name="sizeBy" value="weight" id="info" checked="checked" />
+                <label id="info_label" for="info">INFO
+                    <span class="tooltip_info">Provides information on ingredients including shelf life, storage methods, signs of expirations, and how to properly recycle the ingredient.</span>
+                </label>
+                <input type="radio" name="sizeBy" value="dimensions" id="track" />
+                <label id="track_label" for="track">TRACK
+                    <span class="tooltip_track">Keeps track of information about your ingredients including purchase dates and expiration dates.</span>
+                </label>
+            </div>
+        </div>
+        <div id="search_bar">
+            <input id="textBox" type="text" placeholder="#Banana #Tomato #Milk">
+            <button id="submit_btn" type="submit" onclick="clickButton()">ADD</button>
+        </div>
+    </div>
+    <script src="./js/home.js"></script>
 </body>
 </html>
