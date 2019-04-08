@@ -2,6 +2,10 @@ html {
     min-height: 170%;
 }
 
+img {
+    border: 5px solid white;
+}
+
 #item1 {
     position: absolute;
     color: white;
@@ -66,7 +70,7 @@ html {
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 5px;
-    border: 1px solid white;
+    border: 5px solid white;
     background-color: rgba(45, 45, 45, 0.20);
     padding: 10%;
 }
