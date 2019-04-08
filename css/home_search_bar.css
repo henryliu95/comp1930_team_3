@@ -21,3 +21,29 @@
     cursor: pointer;
     opacity: 0.8;
 }
+
+.tooltip_info,
+.tooltip_track {
+    visibility: hidden;
+    position: absolute;
+    display: inline-block;
+    color: green;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid black;
+    font-size: 0.8em;
+    width: 100%;
+    max-width: 200%;
+}
+
+
+#info_label:hover .tooltip_info {
+    visibility: visible;
+    top: -203%;
+    left: 0%;
+}
+
+#track_label:hover .tooltip_track {
+    visibility: visible;
+    top: -155%;
+    left: 0%;
+}
