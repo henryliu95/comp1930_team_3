@@ -71,7 +71,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 5px;
     border: 5px solid white;
-    background-color: rgba(45, 45, 45, 0.20);
+    background-color: rgba(45, 45, 45, 0.40);
     padding: 10%;
 }
 
@@ -92,7 +92,7 @@ img {
 
 #box4:hover #popup4 {
     left: 130%;
-    top: -45%;
+    top: -43%;
 }
 
 #box1:hover #header1,

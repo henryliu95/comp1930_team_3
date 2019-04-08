@@ -4,36 +4,51 @@ html {
 
 #title {
     position: absolute;
+    width: 80%;
     top: 10%;
     margin: 10%;
-    font-size: 50px;
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #f22c2c;
+    font-size: 50px; 
+    color: white;
+}
+
+.subtitle {
+    font-size: 1.8em;
+    font-weight: bold;
 }
 
 div.why {
     position: absolute;
-    top: 90%;
+    top: 110%;
     margin: 10%;
-    font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #f22c2c;
+    width: 80%;
+    font-size: 1.2em;
+    background-color: rgba(45, 45, 45, 0.40);    
+    color: white;
+    border: 1px solid white;
+    padding: 1%;
+    line-height: 150%;
 }
 
 div.goals {
     position: absolute;
-    top: 220%;
+    top: 280%;
     margin: 10%;
-    font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #f22c2c;
+    width: 80%;
+    font-size: 1.2em;
+    background-color: rgba(45, 45, 45, 0.40);    
+    color: white;
+    border: 1px solid white;
+    padding: 1%;
+    line-height: 150%;
 }
 
 div.app {
     position: absolute;
-    top: 320%;
+    top: 380%;
     margin: 10%;
-    font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #f22c2c;
+    font-size: 1.em;
+    background-color: rgba(45, 45, 45, 0.40);    
+    color: white;
+    border: 1px solid white;
+    padding: 1%;
 }
