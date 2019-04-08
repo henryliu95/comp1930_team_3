@@ -8,6 +8,7 @@
     text-indent: 3%;
     color: tomato;
     opacity: 0.9;
+    border-color: white;
 }
 
 #submit_btn {
@@ -41,12 +42,14 @@
 
 #info_label:hover .tooltip_info {
     visibility: visible;
+    color: white;
     top: -250%;
     left: 0%;
 }
 
 #track_label:hover .tooltip_track {
     visibility: visible;
+    color: white;
     top: -220%;
     left: 0%;
 }

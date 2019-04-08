@@ -26,9 +26,9 @@ firebase.auth().onAuthStateChanged(function(user) {
           let cell3 = row.insertCell(2);
           let cell4 = row.insertCell(3);
           cell1.innerHTML = userSnapshot.key;
-          cell2.innerHTML = '<input id="purchase_date" type="date" onchange="getIndexNum();">';
+          cell2.innerHTML = '<input type="date" id="purchase_date" onchange="getIndexNum();">';
           document.getElementById('purchase_date').classList.add(userSnapshot.key + "PD");
-          cell3.innerHTML = '<input id="expire_date" type="date" oninput="getExpireDate(event)">';
+          cell3.innerHTML = '<input type="date" id="expire_date"  oninput="getExpireDate(event)">';
           document.getElementById('expire_date').classList.add(userSnapshot.key + "ED");
           cell4.innerHTML = '<input type="button" value="Delete" onclick="deleteItem(this)">';
         }

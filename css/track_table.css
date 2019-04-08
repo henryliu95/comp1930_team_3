@@ -2,15 +2,11 @@
 #groceryTable {
     font-family: 'lato', sans-serif;
     position: absolute;
-    margin-top: 20%;
+    margin-top: 13%;
     left: 10%;
     width: 80%;
     text-align: center;
 }
-
-/* table {
-    border: solid 4px white;
-} */
 
 #thead {
     background-color: tomato;
