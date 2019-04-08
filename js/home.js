@@ -3,7 +3,6 @@ function pageLoad(){
     let infoChecked = document.getElementById("info");
     let trackChecked = document.getElementById("track");
 
-
     if (infoChecked.checked){
         location.href = "./information.html"
     }else if (trackChecked.checked){
